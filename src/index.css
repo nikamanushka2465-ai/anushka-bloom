@@ -1,42 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Anushka's Portfolio Design System */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Brand Colors - Green & Orange Theme */
+    --background: 42 15% 97%; /* Cream background */
+    --foreground: 155 100% 8%; /* Deep forest green */
+    
+    --primary: 155 65% 25%; /* Forest green */
+    --primary-foreground: 42 15% 97%;
+    --primary-glow: 155 45% 35%;
+    
+    --secondary: 155 25% 15%; /* Darker green */
+    --secondary-foreground: 42 15% 97%;
+    
+    --accent: 45 100% 55%; /* Vibrant orange */
+    --accent-foreground: 155 100% 8%;
+    --accent-glow: 45 100% 65%;
+    
+    --muted: 42 15% 95%;
+    --muted-foreground: 155 15% 45%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 155 100% 8%;
+    
+    --border: 42 15% 90%;
+    --input: 42 15% 90%;
+    --ring: 45 100% 55%;
+    
+    /* Portfolio specific colors */
+    --hero-orange: 45 100% 55%;
+    --hero-green: 155 65% 25%;
+    --stats-text: 45 100% 55%;
+    --section-dark: 155 25% 15%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-orange: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-orange: 0 8px 25px -8px hsl(var(--accent) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +116,172 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero-primary {
+    @apply bg-[var(--gradient-hero)] text-primary-foreground px-8 py-4 rounded-full font-semibold 
+           shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-orange)] 
+           transition-[var(--transition-smooth)] hover:scale-105;
+  }
+  
+  .btn-hero-secondary {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold
+           hover:bg-primary hover:text-primary-foreground
+           transition-[var(--transition-smooth)] hover:scale-105;
+  }
+  
+  .btn-orange {
+    @apply bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold
+           shadow-[var(--shadow-orange)] hover:bg-accent-glow
+           transition-[var(--transition-bounce)] hover:scale-105;
+  }
+  
+  /* Card Styles */
+  .card-elegant {
+    @apply bg-card rounded-2xl p-6 shadow-[var(--shadow-card)] 
+           hover:shadow-[var(--shadow-elegant)] transition-[var(--transition-smooth)]
+           hover:-translate-y-2;
+  }
+  
+  /* Floating animations */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .float-animation-delayed {
+    animation: float 3s ease-in-out infinite 1.5s;
+  }
+  
+  /* Scroll animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Skill progress bars */
+  .progress-bar {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-[var(--gradient-orange)] transition-all duration-1000 ease-out;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    background: var(--gradient-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Navigation styles */
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--gradient-orange);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  /* Custom keyframes */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse-orange {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 10px hsl(var(--accent) / 0);
+    }
+  }
+  
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-orange {
+    animation: pulse-orange 2s infinite;
+  }
+  
+  .animate-typewriter {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--accent));
+    animation: typewriter 3s steps(30) 1s forwards, blink 1s infinite;
   }
 }
