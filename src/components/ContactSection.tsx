@@ -76,7 +76,7 @@ const ContactSection = () => {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-secondary to-accent text-primary-foreground relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-primary to-accent text-primary-foreground relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -89,9 +89,9 @@ const ContactSection = () => {
         
         {/* Section Header */}
         <div className={`text-center mb-16 ${isVisible ? 'fade-in-up animate' : 'fade-in-up'}`}>
-          <span className="text-yellow text-lg font-medium">— Get In Touch</span>
+          <span className="text-beige text-lg font-medium">— Get In Touch</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Let's Work <span className="text-yellow">Together</span>
+            Let's Work <span className="text-beige">Together</span>
           </h2>
           <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology
@@ -109,8 +109,8 @@ const ContactSection = () => {
               
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center">
-                    <Mail className="text-yellow-foreground" size={20} />
+                  <div className="w-12 h-12 bg-beige rounded-full flex items-center justify-center">
+                    <Mail className="text-beige-foreground" size={20} />
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
@@ -119,8 +119,8 @@ const ContactSection = () => {
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center">
-                    <Phone className="text-yellow-foreground" size={20} />
+                  <div className="w-12 h-12 bg-beige rounded-full flex items-center justify-center">
+                    <Phone className="text-beige-foreground" size={20} />
                   </div>
                   <div>
                     <p className="font-semibold">Phone</p>
@@ -129,8 +129,8 @@ const ContactSection = () => {
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center">
-                    <MapPin className="text-yellow-foreground" size={20} />
+                  <div className="w-12 h-12 bg-beige rounded-full flex items-center justify-center">
+                    <MapPin className="text-beige-foreground" size={20} />
                   </div>
                   <div>
                     <p className="font-semibold">Location</p>
@@ -169,7 +169,7 @@ const ContactSection = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-primary-foreground">Quick Actions</h3>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-yellow text-yellow-foreground px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity">
+                <button className="bg-beige text-beige-foreground px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity">
                   <ExternalLink size={18} />
                   Download Resume
                 </button>
@@ -198,7 +198,7 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-primary-foreground/20 border border-yellow/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-yellow"
+                      className="w-full px-4 py-3 bg-primary-foreground/20 border border-beige/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-beige"
                       placeholder="Your name"
                     />
                   </div>
@@ -213,7 +213,7 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-primary-foreground/20 border border-yellow/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-yellow"
+                      className="w-full px-4 py-3 bg-primary-foreground/20 border border-beige/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-beige"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -230,7 +230,7 @@ const ContactSection = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-primary-foreground/20 border border-yellow/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-yellow"
+                    className="w-full px-4 py-3 bg-primary-foreground/20 border border-beige/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-beige"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -246,14 +246,14 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-primary-foreground/20 border border-yellow/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-yellow resize-none"
+                    className="w-full px-4 py-3 bg-primary-foreground/20 border border-beige/30 rounded-lg text-primary-foreground placeholder-primary-foreground/60 focus:outline-none focus:ring-2 focus:ring-beige resize-none"
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-yellow text-yellow-foreground px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                  className="w-full bg-beige text-beige-foreground px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                   <Send size={20} />
                   Send Message
@@ -272,7 +272,7 @@ const ContactSection = () => {
             <p className="text-primary-foreground/80 mb-6">
               I'm currently available for freelance projects and full-time opportunities
             </p>
-            <button className="bg-yellow text-yellow-foreground px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity">
+            <button className="bg-beige text-beige-foreground px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity">
               Let's Discuss Your Project
             </button>
           </div>

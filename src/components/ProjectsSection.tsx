@@ -110,7 +110,7 @@ const ProjectsSection = () => {
     <section 
       id="projects" 
       ref={sectionRef}
-      className="py-20 bg-muted/30"
+      className="py-20 bg-card"
     >
       <div className="container mx-auto px-6">
         
@@ -152,7 +152,7 @@ const ProjectsSection = () => {
             >
               {/* Project Image/Icon */}
               <div className="relative mb-6">
-                <div className="w-full h-48 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex items-center justify-center text-6xl mb-4 group-hover:scale-105 transition-transform">
+                <div className="w-full h-48 bg-gradient-to-br from-beige/30 to-accent/20 rounded-xl flex items-center justify-center text-6xl mb-4 group-hover:scale-105 transition-transform">
                   {project.image}
                 </div>
                 {project.featured && (

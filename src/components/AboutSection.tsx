@@ -29,7 +29,7 @@ const AboutSection = () => {
     <section 
       id="about" 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-primary to-secondary text-primary-foreground"
+      className="py-20 bg-primary text-primary-foreground"
     >
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -48,43 +48,43 @@ const AboutSection = () => {
 
               {/* Floating Skill Tags */}
               <div className="absolute top-4 left-4 float-animation">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   UX/UI Design
                 </div>
               </div>
               
               <div className="absolute top-1/3 -right-4 float-animation-delayed">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-beige text-beige-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   Mobile App Design
                 </div>
               </div>
               
               <div className="absolute bottom-8 left-8 float-animation">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   Website Design
                 </div>
               </div>
               
               <div className="absolute bottom-1/3 -left-6 float-animation-delayed">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-beige text-beige-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   Prototype
                 </div>
               </div>
               
               <div className="absolute top-1/2 -right-8 float-animation">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   Dashboard
                 </div>
               </div>
 
               <div className="absolute bottom-4 right-4 float-animation-delayed">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-beige text-beige-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   Design System
                 </div>
               </div>
 
               <div className="absolute top-8 right-1/3 float-animation">
-                <div className="bg-yellow text-yellow-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
                   Wireframe Design
                 </div>
               </div>
@@ -96,9 +96,9 @@ const AboutSection = () => {
             
             {/* Section Header */}
             <div className="space-y-2">
-              <span className="text-yellow text-lg font-medium">— About Me</span>
+              <span className="text-accent text-lg font-medium">— About Me</span>
               <h2 className="text-4xl md:text-5xl font-bold">
-                Who is <span className="text-yellow">Anushka Nikam</span>?
+                Who is <span className="text-beige">Anushka Nikam</span>?
               </h2>
             </div>
 
@@ -120,29 +120,29 @@ const AboutSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 py-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow mb-2">15+</div>
+                <div className="text-4xl font-bold text-beige mb-2">15+</div>
                 <div className="text-sm text-primary-foreground/80">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow mb-2">8+</div>
+                <div className="text-4xl font-bold text-beige mb-2">8+</div>
                 <div className="text-sm text-primary-foreground/80">Technologies Mastered</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow mb-2">3rd</div>
+                <div className="text-4xl font-bold text-beige mb-2">3rd</div>
                 <div className="text-sm text-primary-foreground/80">Year at IIIT</div>
               </div>
             </div>
 
             {/* Download CV Button */}
             <div className="flex items-center gap-4">
-              <button className="bg-yellow text-yellow-foreground px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity">
+              <button className="bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-accent-glow transition-colors">
                 <Download size={20} />
                 Download CV
                 <ExternalLink size={16} />
               </button>
               
               {/* Signature */}
-              <div className="font-script text-3xl text-yellow">
+              <div className="font-script text-3xl text-accent">
                 Anushka Nikam
               </div>
             </div>

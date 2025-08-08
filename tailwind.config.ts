@@ -37,9 +37,9 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
-				yellow: {
-					DEFAULT: 'hsl(var(--yellow))',
-					foreground: 'hsl(var(--yellow-foreground))'
+				beige: {
+					DEFAULT: 'hsl(var(--beige))',
+					foreground: 'hsl(var(--beige-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

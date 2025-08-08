@@ -4,52 +4,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Anushka's Portfolio Design System - Burgundy, Red & Yellow Theme */
+/* Anushka's Portfolio Design System - Warm Earth Tones */
 @layer base {
   :root {
-    /* Brand Colors - Burgundy, Red & Yellow Theme */
-    --background: 42 15% 98%; /* Clean white/cream background */
-    --foreground: 350 85% 15%; /* Deep burgundy for text */
+    /* Brand Colors - Brown, Golden Orange & Sage Green Theme */
+    --background: 85 50% 92%; /* Light sage green (#F2F6D0) */
+    --foreground: 35 25% 26%; /* Rich dark brown (#443627) */
     
-    --primary: 350 85% 15%; /* Deep burgundy (#3B060A) */
-    --primary-foreground: 42 15% 98%;
-    --primary-glow: 350 75% 25%;
+    --primary: 35 25% 26%; /* Rich dark brown (#443627) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --primary-glow: 35 35% 36%;
     
-    --secondary: 0 100% 27%; /* Rich red (#8A0000) */
-    --secondary-foreground: 42 15% 98%;
+    --secondary: 37 64% 48%; /* Warm golden orange (#D98324) */
+    --secondary-foreground: 0 0% 100%; /* White */
     
-    --accent: 15 88% 44%; /* Vibrant orange-red (#C83F12) */
-    --accent-foreground: 42 15% 98%;
-    --accent-glow: 15 88% 54%;
+    --accent: 37 64% 48%; /* Warm golden orange (#D98324) */
+    --accent-foreground: 0 0% 100%; /* White */
+    --accent-glow: 37 74% 58%;
     
-    --yellow: 54 100% 76%; /* Bright yellow (#FFF287) */
-    --yellow-foreground: 350 85% 15%;
+    --beige: 43 48% 80%; /* Soft beige (#EFDCAB) */
+    --beige-foreground: 35 25% 26%; /* Dark brown text on beige */
     
-    --muted: 42 15% 95%;
-    --muted-foreground: 350 35% 45%;
+    --muted: 43 48% 80%; /* Soft beige for muted elements */
+    --muted-foreground: 35 35% 46%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 350 85% 15%;
+    --card: 0 0% 100%; /* White for cards */
+    --card-foreground: 35 25% 26%;
     
-    --border: 42 15% 90%;
-    --input: 42 15% 90%;
-    --ring: 15 88% 44%;
+    --border: 43 48% 75%;
+    --input: 43 48% 85%;
+    --ring: 37 64% 48%;
     
     /* Portfolio specific colors */
-    --section-dark: 350 85% 15%; /* Deep burgundy for dark sections */
-    --stats-text: 54 100% 76%; /* Bright yellow for stats */
+    --section-dark: 35 25% 26%; /* Rich dark brown for dark sections */
+    --sage-green: 85 50% 92%; /* Light sage green background */
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--yellow)));
-    --gradient-red-orange: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
-    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--beige)), hsl(var(--background)));
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--beige)));
     
     /* Shadows */
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
     --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
     --shadow-accent: 0 8px 25px -8px hsl(var(--accent) / 0.3);
-    --shadow-yellow: 0 6px 20px -6px hsl(var(--yellow) / 0.4);
+    --shadow-warm: 0 6px 20px -6px hsl(var(--beige) / 0.4);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -136,14 +136,14 @@
 @layer components {
   /* Hero Button Variants */
   .btn-hero-primary {
-    @apply bg-primary text-yellow px-8 py-4 rounded-full font-semibold 
-           shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-accent)] 
+    @apply bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold 
+           shadow-[var(--shadow-accent)] hover:bg-accent-glow 
            transition-[var(--transition-smooth)] hover:scale-105;
   }
   
   .btn-hero-secondary {
-    @apply border-2 border-accent text-accent px-8 py-4 rounded-full font-semibold
-           hover:bg-accent hover:text-accent-foreground
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold
+           hover:bg-primary hover:text-primary-foreground
            transition-[var(--transition-smooth)] hover:scale-105;
   }
   
@@ -153,9 +153,9 @@
            transition-[var(--transition-bounce)] hover:scale-105;
   }
   
-  .btn-yellow {
-    @apply bg-yellow text-yellow-foreground px-6 py-3 rounded-full font-semibold
-           shadow-[var(--shadow-yellow)] hover:opacity-90
+  .btn-beige {
+    @apply bg-beige text-beige-foreground px-6 py-3 rounded-full font-semibold
+           shadow-[var(--shadow-warm)] hover:opacity-90
            transition-[var(--transition-bounce)] hover:scale-105;
   }
   
