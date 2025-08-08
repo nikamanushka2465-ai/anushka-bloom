@@ -63,7 +63,7 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <button className="btn-orange">
+            <button className="btn-accent">
               Contact Me
             </button>
           </div>
@@ -91,7 +91,7 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <button className="btn-orange self-start">
+              <button className="btn-accent self-start">
                 Contact Me
               </button>
             </div>

@@ -4,49 +4,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Anushka's Portfolio Design System */
+/* Anushka's Portfolio Design System - Burgundy, Red & Yellow Theme */
 @layer base {
   :root {
-    /* Brand Colors - Green & Orange Theme */
-    --background: 42 15% 97%; /* Cream background */
-    --foreground: 155 100% 8%; /* Deep forest green */
+    /* Brand Colors - Burgundy, Red & Yellow Theme */
+    --background: 42 15% 98%; /* Clean white/cream background */
+    --foreground: 350 85% 15%; /* Deep burgundy for text */
     
-    --primary: 155 65% 25%; /* Forest green */
-    --primary-foreground: 42 15% 97%;
-    --primary-glow: 155 45% 35%;
+    --primary: 350 85% 15%; /* Deep burgundy (#3B060A) */
+    --primary-foreground: 42 15% 98%;
+    --primary-glow: 350 75% 25%;
     
-    --secondary: 155 25% 15%; /* Darker green */
-    --secondary-foreground: 42 15% 97%;
+    --secondary: 0 100% 27%; /* Rich red (#8A0000) */
+    --secondary-foreground: 42 15% 98%;
     
-    --accent: 45 100% 55%; /* Vibrant orange */
-    --accent-foreground: 155 100% 8%;
-    --accent-glow: 45 100% 65%;
+    --accent: 15 88% 44%; /* Vibrant orange-red (#C83F12) */
+    --accent-foreground: 42 15% 98%;
+    --accent-glow: 15 88% 54%;
+    
+    --yellow: 54 100% 76%; /* Bright yellow (#FFF287) */
+    --yellow-foreground: 350 85% 15%;
     
     --muted: 42 15% 95%;
-    --muted-foreground: 155 15% 45%;
+    --muted-foreground: 350 35% 45%;
     
     --card: 0 0% 100%;
-    --card-foreground: 155 100% 8%;
+    --card-foreground: 350 85% 15%;
     
     --border: 42 15% 90%;
     --input: 42 15% 90%;
-    --ring: 45 100% 55%;
+    --ring: 15 88% 44%;
     
     /* Portfolio specific colors */
-    --hero-orange: 45 100% 55%;
-    --hero-green: 155 65% 25%;
-    --stats-text: 45 100% 55%;
-    --section-dark: 155 25% 15%;
+    --section-dark: 350 85% 15%; /* Deep burgundy for dark sections */
+    --stats-text: 54 100% 76%; /* Bright yellow for stats */
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-orange: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--yellow)));
+    --gradient-red-orange: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
     --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     
     /* Shadows */
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
     --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
-    --shadow-orange: 0 8px 25px -8px hsl(var(--accent) / 0.3);
+    --shadow-accent: 0 8px 25px -8px hsl(var(--accent) / 0.3);
+    --shadow-yellow: 0 6px 20px -6px hsl(var(--yellow) / 0.4);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -133,20 +136,26 @@
 @layer components {
   /* Hero Button Variants */
   .btn-hero-primary {
-    @apply bg-[var(--gradient-hero)] text-primary-foreground px-8 py-4 rounded-full font-semibold 
-           shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-orange)] 
+    @apply bg-primary text-yellow px-8 py-4 rounded-full font-semibold 
+           shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-accent)] 
            transition-[var(--transition-smooth)] hover:scale-105;
   }
   
   .btn-hero-secondary {
-    @apply border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold
-           hover:bg-primary hover:text-primary-foreground
+    @apply border-2 border-accent text-accent px-8 py-4 rounded-full font-semibold
+           hover:bg-accent hover:text-accent-foreground
            transition-[var(--transition-smooth)] hover:scale-105;
   }
   
-  .btn-orange {
+  .btn-accent {
     @apply bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold
-           shadow-[var(--shadow-orange)] hover:bg-accent-glow
+           shadow-[var(--shadow-accent)] hover:bg-accent-glow
+           transition-[var(--transition-bounce)] hover:scale-105;
+  }
+  
+  .btn-yellow {
+    @apply bg-yellow text-yellow-foreground px-6 py-3 rounded-full font-semibold
+           shadow-[var(--shadow-yellow)] hover:opacity-90
            transition-[var(--transition-bounce)] hover:scale-105;
   }
   
@@ -206,12 +215,12 @@
   }
   
   .progress-fill {
-    @apply h-full bg-[var(--gradient-orange)] transition-all duration-1000 ease-out;
+    @apply h-full bg-[var(--gradient-accent)] transition-all duration-1000 ease-out;
   }
   
   /* Gradient text */
   .text-gradient {
-    background: var(--gradient-orange);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -229,7 +238,7 @@
     height: 2px;
     bottom: -4px;
     left: 0;
-    background: var(--gradient-orange);
+    background: var(--gradient-accent);
     transition: width 0.3s ease-in-out;
   }
   
@@ -250,7 +259,7 @@
     }
   }
   
-  @keyframes pulse-orange {
+  @keyframes pulse-accent {
     0%, 100% {
       box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4);
     }
@@ -273,8 +282,8 @@
     animation: float 3s ease-in-out infinite;
   }
   
-  .animate-pulse-orange {
-    animation: pulse-orange 2s infinite;
+  .animate-pulse-accent {
+    animation: pulse-accent 2s infinite;
   }
   
   .animate-typewriter {

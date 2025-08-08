@@ -26,7 +26,7 @@ const HeroSection = () => {
             
             {/* Greeting */}
             <div className="inline-block">
-              <div className="border-2 border-accent border-dashed p-4 rounded-lg bg-accent/5">
+              <div className="border-2 border-yellow border-dashed p-4 rounded-lg bg-yellow/10">
                 <span className="text-lg font-medium text-foreground">Hello There!</span>
               </div>
             </div>
@@ -71,8 +71,8 @@ const HeroSection = () => {
             
             {/* Main Profile Image */}
             <div className="relative">
-              {/* Orange Background Circle */}
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-accent mx-auto relative overflow-hidden">
+              {/* Gradient Background Circle */}
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary to-secondary mx-auto relative overflow-hidden">
                 <img 
                   src={profileImage} 
                   alt="Anushka Nikam - Computer Science Student" 
@@ -103,10 +103,10 @@ const HeroSection = () => {
 
               {/* Hire Me Circle Badge */}
               <div className="absolute top-8 right-8">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center animate-pulse-orange">
+                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center animate-pulse-accent">
                   <div className="text-center">
-                    <div className="text-xs text-primary-foreground font-bold">HIRE</div>
-                    <div className="text-xs text-primary-foreground font-bold">ME</div>
+                    <div className="text-xs text-accent-foreground font-bold">HIRE</div>
+                    <div className="text-xs text-accent-foreground font-bold">ME</div>
                   </div>
                 </div>
               </div>
